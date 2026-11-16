@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+  ISTE 140 - Web and Mobile I - Assignment 3
+  Page: member1.html
+  Student: [Student Name 1]  Student ID: [Student ID 1]
+  Team: [Team Number]
+  Topic: Phishing and social engineering
+  Layout option 1: header, navigation on the left, main on the right, footer
+  Team media requirement: audio element
+  Image credit: all illustrations were drawn by this member as SVG files in assets/img/.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phishing Field Notes | Blue Team Basics</title>
+  <meta name="description" content="Four red flags of phishing and social engineering, a three-step verification habit, and a simulated voicemail you should not trust.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/member1.css">
+</head>
+<body>
+  <div class="site">
+
+    <!-- Header: title on the left, course details on the right -->
+    <header class="site-header">
+      <div>
+        <p class="kicker">Field note 01 &middot; Social engineering</p>
+        <h1>Phishing is a<br><span>conversation</span>, not a hack.</h1>
+      </div>
+      <p class="header-meta">ISTE 140<br>Team [Team Number]<br>Fall 2026</p>
+    </header>
+
+    <!-- Left navigation: jumps to each section and back to the home page -->
+    <nav class="side-nav" aria-label="On this page">
+      <p class="nav-kicker">In this briefing</p>
+      <ul class="nav-list">
+        <li><a href="#flags"><span>01</span>Four red flags</a></li>
+        <li><a href="#verify"><span>02</span>The three-step check</a></li>
+        <li><a href="#listen"><span>03</span>Hear an example</a></li>
+      </ul>
+      <a class="back-link" href="index.html">Back to home</a>
+    </nav>
+
+    <!-- Main: intro, red-flag cards, verification steps and the audio example -->
+    <main id="main">
+      <section class="lede" aria-labelledby="lede-title">
+        <p class="kicker">Why this matters</p>
+        <h2 id="lede-title">Most breaches start with a message</h2>
+        <p class="lede-copy">Phishing is not a technical attack. It is a conversation with a deadline. Most messages that steal credentials never touch code &mdash; they borrow a logo, copy a tone, and ask you to do one small thing quickly. The four cards below collect the red flags we see most often at university and at work.</p>
+        <p class="lede-note">Read them once, then use the three-step check before you click anything that asks for a password, a payment, or a file. If a message feels urgent, that is the moment to slow down.</p>
+      </section>
+
+      <section class="flags" id="flags" aria-labelledby="flags-title">
+        <div class="section-heading">
+          <p class="kicker">01 &middot; The tells</p>
+          <h2 id="flags-title">Four red flags</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-media">
+              <img src="assets/img/flag_urgency.svg" alt="Cream envelope with a large clock in the corner">
+              <span class="badge">Urgency</span>
+            </div>
+            <div class="card-body">
+              <h3>Borrowed urgency</h3>
+              <p>Payroll closes in ten minutes. Your account will be suspended tonight. Real departments give you days, not minutes, and they never threaten you into clicking.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="assets/img/flag_authority.svg" alt="Clip-on identification badge next to a warning symbol">
+              <span class="badge">Authority</span>
+            </div>
+            <div class="card-body">
+              <h3>A uniform is not proof</h3>
+              <p>A familiar logo, a job title and a calm tone are cheap to fake. Treat any request for a password or a code as suspicious, even when the sender looks official.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="assets/img/flag_link.svg" alt="Browser address bar above three chain links and a cursor">
+              <span class="badge">Lookalike</span>
+            </div>
+            <div class="card-body">
+              <h3>Links that almost match</h3>
+              <p><strong>rit.edu</strong> and <strong>rit-edu.support</strong> are different addresses. Hover over a link, read the domain from right to left, and type the address yourself when in doubt.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="assets/img/flag_attachment.svg" alt="Document, paperclip and warning triangle">
+              <span class="badge">Attachment</span>
+            </div>
+            <div class="card-body">
+              <h3>Files you did not ask for</h3>
+              <p>An unexpected invoice, CV or &ldquo;scanned document&rdquo; can carry malware. If you were not expecting the file, confirm with the sender through a channel you already trust.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="verify" id="verify" aria-labelledby="verify-title">
+        <div class="section-heading">
+          <p class="kicker">02 &middot; The habit</p>
+          <h2 id="verify-title">The three-step check</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3>Stop the clock</h3>
+            <p>Do not reply, click or call the number in the message. Urgency is the attacker&rsquo;s main tool, so refusing to hurry removes it.</p>
+          </li>
+          <li class="step">
+            <h3>Check the channel</h3>
+            <p>Contact the person or office through the phone number or website you already use &mdash; never the contact details printed in the message.</p>
+          </li>
+          <li class="step">
+            <h3>Report, then delete</h3>
+            <p>Forward the message to your IT or security team, then delete it. Reporting one phishing email protects everyone else on the same list.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="listen" id="listen" aria-labelledby="listen-title">
+        <div class="briefing">
+          <p class="kicker">Audio &middot; 31 seconds</p>
+          <h2 id="listen-title">Hear the pressure tactic</h2>
+          <p class="briefing-copy">This simulated voicemail uses every trick in the guide: a friendly name, a deadline, a threat to your course access and a request for a one-time code. It was recorded for this class; no real service desk is involved.</p>
+          <!-- AUDIO CREDIT: simulated voicemail recorded by [Student Name 1] for this class. -->
+          <audio controls preload="metadata" src="assets/media/phishing_voicemail.m4a">
+            Your browser does not support the audio element. <a href="assets/media/phishing_voicemail.m4a">Download the audio file</a>.
+          </audio>
+          <details>
+            <summary>Read the transcript</summary>
+            <div class="transcript">
+              <p>&ldquo;Hi, this is Daniel from the IT Service Desk. We are migrating student accounts to the new portal tonight, and yours has not been verified yet. If it is not confirmed in the next thirty minutes, your email and course materials will be suspended. Open the link in this message, and sign in with your university password so we can keep your access active. If you have any trouble, just reply with the six digit code you receive.&rdquo;</p>
+              <p>Notice what is missing: no ticket number, no official domain and no reason to trust the caller. The pressure is the point.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: member identification and a way back home -->
+    <footer class="site-footer">
+      <p>Page by [Student Name 1] &middot; [Student ID 1]</p>
+      <p><a href="index.html">Blue Team Basics</a> &middot; Team [Team Number]</p>
+    </footer>
+  </div>
+</body>
+</html>

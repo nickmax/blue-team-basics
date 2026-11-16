@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Submission archives (built locally, not source)
+*.zip
+
+# Editor folders
+.vscode/
+.idea/

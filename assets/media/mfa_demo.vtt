@@ -1,0 +1,14 @@
+WEBVTT
+
+NOTE
+Caption file for the ISTE 140 demo video on member2.html.
+Written by [Student Name 2] for this class.
+
+00:00:00.000 --> 00:00:07.852
+Passwords and multi-factor authentication. Two habits that stop most account takeovers. Here is the short version.
+
+00:00:07.852 --> 00:00:22.438
+First, length beats complexity. A passphrase of four random words is easier to remember, and harder to crack, than a short password with symbols. Use a different one for every account, and let a password manager remember them for you.
+
+00:00:22.438 --> 00:00:36.606
+Second, add a second factor. A code from an app, a passkey, or a hardware key means a stolen password is not enough on its own. Avoid text message codes when you can, and never approve a sign-in you did not start.

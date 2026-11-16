@@ -1,0 +1,754 @@
+/*
+  ISTE 140 - Web and Mobile I - Assignment 3
+  File: assets/css/member3.css
+  Student: [Student Name 3]  Student ID: [Student ID 3]
+  Team: [Team Number]
+  Page: member3.html - Endpoint protection and malware
+  Colours: --forest #22382c, --sage #dde6d2, --cream #f8f5ea,
+           --clay #a94b25, --moss #566b4b. Transparent shades are tints of these.
+  Fonts: Optima for headings, Helvetica Neue for body text.
+  Layout: option 3, header, navigation, main content, sidebar, footer.
+*/
+
+/* Colour and font tokens for the page. */
+:root {
+  --forest: #22382c;
+  --sage: #dde6d2;
+  --cream: #f8f5ea;
+  --clay: #a94b25;
+  --moss: #566b4b;
+  --display: Optima, "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Include border and padding in every element's width. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* COLOUR: warm paper page with forest text, sage panels and a clay accent for actions and warning marks. */
+/* Page background with a soft sage glow in the top corner. */
+body {
+  margin: 0;
+  background-color: var(--cream);
+  background-image: radial-gradient(circle at 92% 0%, rgba(221, 230, 210, 0.95), transparent 42%);
+  color: var(--forest);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Keep images inside their containers and remove inline gaps. */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove link underlines so each component can style itself. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Reset list spacing because grids control every gap. */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Remove default heading and paragraph margins. */
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* Tint selected text with the sage colour. */
+::selection {
+  background-color: var(--sage);
+  color: var(--forest);
+}
+
+/* Keyboard focus ring in the clay accent. */
+:focus-visible {
+  outline: 3px solid var(--clay);
+  outline-offset: 4px;
+}
+
+/* ALIGNMENT: header, nav, main, sidebar and footer share one grid, so their outer edges line up. */
+/* Three-column page grid: nav, main and sidebar, with header and footer spanning all three. */
+.site {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) 230px;
+  grid-template-rows: auto 1fr auto;
+  gap: 0 28px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3vw, 32px);
+}
+
+/* Header spans all three columns. */
+.site-header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: 34px 0 26px;
+  border-bottom: 2px solid var(--forest);
+}
+
+/* Small uppercase label used above headings. */
+.kicker {
+  margin-bottom: 10px;
+  color: var(--clay);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* CONTRAST: a very large forest headline on paper with an italic clay second line. */
+/* Header title in the Optima display face. */
+.site-header h1 {
+  font-family: var(--display);
+  font-size: clamp(34px, 4.1vw, 50px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+/* Second headline line in clay italic. */
+.site-header h1 span {
+  color: var(--clay);
+  font-style: italic;
+}
+
+/* Right side of the header: oversized guide number plus course details. */
+.header-meta {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  text-align: right;
+}
+
+/* Large faded guide number used as a watermark. */
+.header-num {
+  color: rgba(34, 56, 44, 0.14);
+  font-family: var(--display);
+  font-size: 76px;
+  line-height: 0.8;
+}
+
+/* Course details beside the guide number. */
+.header-meta p {
+  color: var(--moss);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  line-height: 1.9;
+  text-transform: uppercase;
+}
+
+/* FINISHING TOUCH: the section navigation stays visible while the article scrolls. */
+/* Left navigation in the first column. */
+.side-nav {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  position: sticky;
+  top: 20px;
+  display: grid;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+/* Label above the navigation links. */
+.nav-title {
+  color: var(--moss);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Navigation links stacked in one list. */
+.nav-list {
+  display: grid;
+}
+
+/* One navigation link with a number and a label. */
+.nav-list a {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(34, 56, 44, 0.16);
+  color: var(--forest);
+  font-size: 12.5px;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+/* Section number inside the navigation. */
+.nav-list span {
+  color: var(--moss);
+  font-family: var(--display);
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Navigation hover turns the link and its rule clay. */
+.nav-list a:hover {
+  border-color: var(--clay);
+  color: var(--clay);
+}
+
+/* Outlined button back to the team home page. */
+.nav-home {
+  display: block;
+  margin-top: 4px;
+  padding: 9px 12px;
+  border: 1px solid var(--forest);
+  border-radius: 8px;
+  color: var(--forest);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+/* Home button hover fills with forest. */
+.nav-home:hover {
+  background-color: var(--forest);
+  color: var(--cream);
+}
+
+/* Main content in the middle column. */
+main {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  gap: 44px;
+  min-width: 0;
+  padding: 34px 0 64px;
+}
+
+/* Intro block with a comfortable line length. */
+.intro {
+  display: grid;
+  gap: 12px;
+  max-width: 66ch;
+}
+
+/* Intro heading in Optima. */
+.intro h2 {
+  font-family: var(--display);
+  font-size: clamp(28px, 3vw, 34px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* Intro paragraph in a softened forest tone. */
+.intro-copy {
+  color: rgba(34, 56, 44, 0.8);
+  font-size: 14.5px;
+}
+
+/* Section heading group. */
+.section-heading {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 18px;
+}
+
+/* Section heading in Optima. */
+.section-heading h2 {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* The kicker inside a section heading needs no extra margin. */
+.section-heading .kicker {
+  margin-bottom: 0;
+}
+
+/* CARD GRID: auto-fit fits as many 200px cards as possible, then shares the spare width. */
+/* If 200px is changed to 300px, each card needs more room. The grid then shows fewer
+   cards per row, every card becomes wider, and the one-column layout appears sooner. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* REPETITION: every card repeats the same border, radius, shadow, image ratio and padding. */
+/* Card shell that clips the image to the rounded corners. */
+.card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  border: 1px solid rgba(34, 56, 44, 0.18);
+  border-radius: 14px;
+  background-color: var(--cream);
+  box-shadow: 0 12px 26px rgba(34, 56, 44, 0.07);
+  overflow: hidden;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+/* Positioning context for the clay badge. */
+.card-media {
+  position: relative;
+}
+
+/* Shared image ratio so all four headings start at the same height. */
+.card-media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(34, 56, 44, 0.12);
+}
+
+/* Clay category badge in the image corner. */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background-color: var(--clay);
+  color: var(--cream);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(34, 56, 44, 0.2);
+}
+
+/* PROXIMITY: each heading and sentence are grouped in one padded block, apart from the image. */
+/* Text block inside a card. */
+.card-body {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 18px;
+}
+
+/* Card heading in Optima. */
+.card-body h3 {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* Card sentence in a softened forest tone. */
+.card-body p {
+  color: rgba(34, 56, 44, 0.76);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* FINISHING TOUCH: cards lift and gain a moss border on hover. */
+/* Card hover state. */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--moss);
+  box-shadow: 0 20px 38px rgba(34, 56, 44, 0.14);
+}
+
+/* Incident section: checklist on the left, urgent note on the right. */
+.incident {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 20px;
+  align-items: start;
+}
+
+/* Checklist in a numbered grid. */
+.incident-list {
+  display: grid;
+  gap: 2px;
+  counter-reset: incident;
+}
+
+/* One checklist item with a numbered circle. */
+.incident-list li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(34, 56, 44, 0.14);
+  color: rgba(34, 56, 44, 0.8);
+  font-size: 13px;
+  line-height: 1.6;
+  counter-increment: incident;
+}
+
+/* The final checklist item has no bottom rule. */
+.incident-list li:last-child {
+  border-bottom: 0;
+}
+
+/* Clay numbered circle before each checklist item. */
+.incident-list li::before {
+  content: "0" counter(incident);
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(180, 85, 45, 0.45);
+  border-radius: 50%;
+  color: var(--clay);
+  font-family: var(--display);
+  font-size: 11px;
+}
+
+/* Dark forest callout with the first action to take. */
+.incident-note {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 22px;
+  border-radius: 16px;
+  background-color: var(--forest);
+  color: var(--cream);
+  box-shadow: 0 16px 34px rgba(34, 56, 44, 0.2);
+}
+
+/* Small sage label at the top of the callout. */
+.note-tag {
+  justify-self: start;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background-color: var(--sage);
+  color: var(--forest);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Callout heading. */
+.incident-note h3 {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* Callout explanation. */
+.incident-copy {
+  color: rgba(248, 245, 234, 0.76);
+  font-size: 12.5px;
+  line-height: 1.65;
+}
+
+/* Right sidebar in the third column. */
+.side-panel {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: start;
+  position: sticky;
+  top: 20px;
+  display: grid;
+  gap: 16px;
+  margin-top: 34px;
+  padding-bottom: 40px;
+}
+
+/* Dark warning-signs panel. */
+.warnings {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: var(--forest);
+  color: var(--cream);
+  box-shadow: 0 16px 34px rgba(34, 56, 44, 0.2);
+}
+
+/* Kicker inside the dark panel uses sage for contrast. */
+.warnings .kicker {
+  margin-bottom: 0;
+  color: var(--sage);
+}
+
+/* Warning panel heading. */
+.warnings h2 {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* List of warning signs. */
+.warning-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+/* One warning sign with a clay dot marker. */
+.warning-list li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  color: rgba(248, 245, 234, 0.78);
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
+/* Small clay dot before every warning. */
+.warning-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background-color: var(--clay);
+}
+
+/* Sage toolbox panel. */
+.toolbox {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: var(--sage);
+  color: var(--forest);
+}
+
+/* Toolbox heading. */
+.toolbox h2 {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* Toolbox list. */
+.tool-list {
+  display: grid;
+  gap: 10px;
+}
+
+/* One tool with a name and a short note. */
+.tool-list li {
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(34, 56, 44, 0.16);
+}
+
+/* The final tool has no divider. */
+.tool-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Tool name. */
+.tool-list h3 {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Tool explanation. */
+.tool-list p {
+  color: rgba(34, 56, 44, 0.72);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+/* Outlined closing note. */
+.side-note {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px dashed rgba(34, 56, 44, 0.35);
+  border-radius: 16px;
+}
+
+/* Reading-time label. */
+.note-meta {
+  color: var(--moss);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Closing note text. */
+.note-copy {
+  color: rgba(34, 56, 44, 0.78);
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+/* Underlined link back to the home page. */
+.note-link {
+  color: var(--clay);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Footer across all three columns. */
+.site-footer {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 22px 0 36px;
+  border-top: 2px solid var(--forest);
+  color: var(--moss);
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+}
+
+/* Footer link in clay. */
+.site-footer a {
+  color: var(--clay);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Footer link hover darkens to forest. */
+.site-footer a:hover {
+  color: var(--forest);
+}
+
+/* BALANCE: four cards become a clean two-by-two block before the wide desktop row. */
+@media (min-width: 561px) and (max-width: 1399px) {
+  /* Two equal card columns keep the block balanced at every middle width. */
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablet layout: nav moves above the article and the sidebar becomes a three-column band. */
+@media (max-width: 1150px) {
+  /* Single-column page grid with five rows. */
+  .site {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto auto;
+    gap: 0;
+  }
+
+  /* Header spans the single column. */
+  .site-header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  /* Navigation becomes a static row under the header. */
+  .side-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    position: static;
+    margin-top: 24px;
+  }
+
+  /* Three section links share the row. */
+  .nav-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  /* Links become small tiles instead of ruled rows. */
+  .nav-list a {
+    padding: 10px;
+    border: 1px solid rgba(34, 56, 44, 0.2);
+    border-radius: 8px;
+  }
+
+  /* Home button stays compact and left aligned. */
+  .nav-home {
+    justify-self: start;
+    max-width: 240px;
+    padding: 9px 20px;
+  }
+
+  /* Main spans the width below the navigation. */
+  main {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 32px;
+  }
+
+  /* Sidebar sits below the article in three equal columns. */
+  .side-panel {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    position: static;
+    margin-top: 0;
+    padding-bottom: 48px;
+  }
+
+  /* Footer spans the width. */
+  .site-footer {
+    grid-column: 1 / -1;
+    grid-row: 5;
+  }
+}
+
+/* Small tablet layout: sidebar panels stack and the incident split becomes one column. */
+@media (max-width: 900px) {
+  /* Incident checklist and callout stack. */
+  .incident {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Sidebar panels stack one above the other. */
+  .side-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Phone layout: header stacks and navigation becomes one column. */
+@media (max-width: 620px) {
+  /* Header stacks its title and meta block. */
+  .site-header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  /* Header meta aligns left on phones. */
+  .header-meta {
+    text-align: left;
+  }
+
+  /* Guide number shrinks a little. */
+  .header-num {
+    font-size: 54px;
+  }
+
+  /* Navigation links stack in one column. */
+  .nav-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Footer lines stack. */
+  .site-footer {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}

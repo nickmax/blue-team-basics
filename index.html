@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+  ISTE 140 - Web and Mobile I - Assignment 3
+  Page: index.html (team home page)
+  Team: [Team Number]
+  Members: [Student Name 1] - [Student ID 1]
+           [Student Name 2] - [Student ID 2]
+           [Student Name 3] - [Student ID 3]
+  Topic: Cybersecurity essentials
+  Image credit: all illustrations were drawn by the team as SVG files in assets/img/.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue Team Basics | Cybersecurity Essentials</title>
+  <meta name="description" content="A three-part student field guide to phishing, password security and endpoint protection, built for ISTE 140 at RIT Dubai.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+  <div class="site">
+
+    <!-- Site header: brand on the left, page links on the right -->
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">BTB</span>
+        <span class="brand-name">Blue Team Basics</span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="member1.html">Phishing</a></li>
+          <li><a href="member2.html">Passwords</a></li>
+          <li><a href="member3.html">Endpoints</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero: one big statement plus a small overview panel -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Cybersecurity essentials &middot; Fall 2026</p>
+        <h1 id="hero-title">Security,<br><span>minus the fear.</span></h1>
+        <p class="lead">Blue Team Basics is a three-part field guide to the defensive side of security. No jargon walls, no doom scrolling &mdash; just the habits that stop most attacks, written by three students who had to learn them too.</p>
+        <div class="hero-actions">
+          <a class="button button-solid" href="member1.html">Start with phishing</a>
+          <a class="button button-ghost" href="#guides">See all three guides</a>
+        </div>
+      </div>
+
+      <aside class="hero-board" aria-label="Site at a glance">
+        <p class="board-kicker">Your baseline</p>
+        <ul class="board-list">
+          <li><span class="tick" aria-hidden="true"></span>Verify before you trust</li>
+          <li><span class="tick" aria-hidden="true"></span>Use one password per account</li>
+          <li><span class="tick" aria-hidden="true"></span>Keep a backup you can restore</li>
+        </ul>
+        <div class="board-stats">
+          <div class="stat-block">
+            <span class="stat">3</span>
+            <span class="stat-label">field guides</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat">5</span>
+            <span class="stat-label">minutes each</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat">1</span>
+            <span class="stat-label">rule: slow down</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Main content: the three member pages and a short project note -->
+    <main id="main">
+      <section class="guides" id="guides" aria-labelledby="guides-title">
+        <div class="section-head">
+          <h2 id="guides-title">Three guides, three habits</h2>
+          <p>Read them in any order. Each page was built by a different member of the team, with its own layout, palette and voice.</p>
+        </div>
+
+        <ul class="guide-grid">
+          <li class="guide-card">
+            <a href="member1.html">
+              <img src="assets/img/thumb_phishing.svg" alt="Chain links beside a browser address bar">
+              <div class="guide-body">
+                <p class="guide-meta"><span>Guide 01</span><span class="guide-media">Audio</span></p>
+                <h3>Phishing &amp; social engineering</h3>
+                <p>Read the message, not the logo. Four red flags, a three-step check, and a voicemail you should not trust.</p>
+                <span class="guide-link">Open the guide &rarr;</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="guide-card">
+            <a href="member2.html">
+              <img src="assets/img/thumb_passwords.svg" alt="Phone showing a verification code beside a shield">
+              <div class="guide-body">
+                <p class="guide-meta"><span>Guide 02</span><span class="guide-media">Video</span></p>
+                <h3>Passwords &amp; MFA</h3>
+                <p>Long passphrases, one per account, plus a second factor. Includes a short explainer video you can watch first.</p>
+                <span class="guide-link">Open the guide &rarr;</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="guide-card">
+            <a href="member3.html">
+              <img src="assets/img/thumb_endpoints.svg" alt="Radar screen with connected device nodes">
+              <div class="guide-body">
+                <p class="guide-meta"><span>Guide 03</span><span class="guide-media">Checklist</span></p>
+                <h3>Endpoint protection &amp; malware</h3>
+                <p>Updates, behaviour monitoring, tested backups, and a ten-minute checklist for the day something goes wrong.</p>
+                <span class="guide-link">Open the guide &rarr;</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="about" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow">About this project</p>
+          <h2 id="about-title">Built for one course, useful beyond it</h2>
+          <p class="about-copy">Every page uses CSS Grid only, with no other layout system, and each member wrote their own copy and styling. The illustrations are original SVG drawings, and the site is small on purpose: three pages, one idea, and habits that are easy to keep.</p>
+        </div>
+        <ul class="team-list">
+          <li><span>[Student Name 1]</span>Phishing &amp; social engineering</li>
+          <li><span>[Student Name 2]</span>Passwords &amp; multi-factor authentication</li>
+          <li><span>[Student Name 3]</span>Endpoint protection &amp; malware</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer: course and team identification -->
+    <footer class="site-footer">
+      <p>Blue Team Basics &middot; ISTE 140 Web and Mobile I</p>
+      <p>Team [Team Number] &middot; RIT Dubai &middot; Fall 2026</p>
+    </footer>
+  </div>
+</body>
+</html>

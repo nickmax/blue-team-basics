@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+  ISTE 140 - Web and Mobile I - Assignment 3
+  Page: member2.html
+  Student: [Student Name 2]  Student ID: [Student ID 2]
+  Team: [Team Number]
+  Topic: Password security and multi-factor authentication
+  Layout option 2: header, main content on the left, sidebar on the right, footer
+  Team media requirement: video element
+  Image credit: all illustrations were drawn by this member as SVG files in assets/img/.
+  Video credit: written, recorded and edited by [Student Name 2] for this class.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passwords &amp; MFA | Blue Team Basics</title>
+  <meta name="description" content="Why length beats complexity, how to stop password reuse, and how multi-factor authentication blocks stolen credentials.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/member2.css">
+</head>
+<body>
+  <div class="site">
+
+    <!-- Header: title, status panel and the page navigation all live in this grid -->
+    <header class="site-header">
+      <div class="header-main">
+        <p class="kicker">Field guide 02 &middot; Identity</p>
+        <h1>Passwords are<br><span>infrastructure.</span></h1>
+        <p class="header-sub">Long, unique, and backed by a second factor.</p>
+      </div>
+      <div class="header-status" role="group" aria-label="Guide status">
+        <p class="status-label">Account health</p>
+        <p class="status-line">MFA <span>on</span></p>
+        <p class="status-line">Reuse <span>zero</span></p>
+        <p class="status-line">Vault <span>locked</span></p>
+      </div>
+      <nav class="header-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#video">Watch</a></li>
+          <li><a href="#habits">Four habits</a></li>
+          <li><a href="#audit">Quick audit</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main column: intro, explainer video and the four habit cards -->
+    <main id="main">
+      <section class="intro" aria-labelledby="intro-title">
+        <p class="kicker">The problem</p>
+        <h2 id="intro-title">Most accounts are not broken into. They are logged into.</h2>
+        <p class="intro-copy">A reused password turns one leaked shopping site into a key for your email, your bank and your student record. The fix is boring and it works: use a long, unique passphrase for every account, store them in a password manager, and add a second factor that is not a text message when the service allows it. The cards below explain each habit, and the video walks through a secure sign-in in under a minute.</p>
+      </section>
+
+      <section class="video-panel" id="video" aria-labelledby="video-title">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">Watch &middot; 37 seconds</p>
+            <h2 id="video-title">Anatomy of a secure sign-in</h2>
+          </div>
+          <p class="panel-meta">Captions included</p>
+        </div>
+        <video controls preload="metadata" width="1280" height="720" poster="assets/img/mfa_poster.svg">
+          <source src="assets/media/mfa_demo.mp4" type="video/mp4">
+          <track kind="captions" src="assets/media/mfa_demo.vtt" srclang="en" label="English captions">
+          Your browser does not support the video element. <a href="assets/media/mfa_demo.mp4">Download the video</a>.
+        </video>
+        <p class="video-note">The video is an original three-slide explainer made for this page. It has no background music, so the narration stays clear in a classroom.</p>
+      </section>
+
+      <section class="habits" id="habits" aria-labelledby="habits-title">
+        <div class="section-heading">
+          <p class="kicker">Four habits</p>
+          <h2 id="habits-title">Make the safe option the easy one</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-media">
+              <img src="assets/img/pass_length.svg" alt="Short grey bar compared with a long mint passphrase bar">
+              <span class="badge">Length</span>
+            </div>
+            <div class="card-body">
+              <h3>Length beats complexity</h3>
+              <p>A four-word passphrase is easier to remember and slower to crack than &ldquo;P@ssw0rd!&rdquo;. Aim for at least 16 characters, and let the browser generate one when you cannot.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="assets/img/pass_reuse.svg" alt="Three account cards holding the same key">
+              <span class="badge">Reuse</span>
+            </div>
+            <div class="card-body">
+              <h3>One account, one password</h3>
+              <p>When a shopping site leaks, reused credentials are tested against email, banking and university systems. A password manager makes unique passwords the easy option.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="assets/img/pass_vault.svg" alt="Padlock with a combination dial">
+              <span class="badge">Vault</span>
+            </div>
+            <div class="card-body">
+              <h3>Let the manager remember</h3>
+              <p>An encrypted vault sits behind one strong master passphrase. Turn on autofill only for sites you trust, and keep a printed recovery code somewhere safe.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="assets/img/pass_mfa.svg" alt="Phone showing a six-digit code beside a shield">
+              <span class="badge">MFA</span>
+            </div>
+            <div class="card-body">
+              <h3>Add a second lock</h3>
+              <p>Multi-factor authentication asks for something you have as well as something you know. An app code, passkey or hardware key beats a text message, which can be intercepted.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar: audit checklist, a ranking of MFA methods and a closing rule -->
+    <aside class="side-panel" id="audit" aria-labelledby="audit-title">
+      <section class="audit">
+        <p class="kicker">60-second audit</p>
+        <h2 id="audit-title">Check your setup</h2>
+        <ol class="audit-list">
+          <li>Open your password manager and count the reused entries.</li>
+          <li>Turn on multi-factor authentication for email first.</li>
+          <li>Replace the oldest password in the vault today.</li>
+          <li>Save one recovery code somewhere offline.</li>
+        </ol>
+      </section>
+
+      <section class="rank" aria-labelledby="rank-title">
+        <h2 id="rank-title">MFA methods, ranked</h2>
+        <ol class="rank-list">
+          <li>
+            <span class="rank-num">01</span>
+            <div>
+              <h3>Passkey</h3>
+              <p>Phishing resistant and tied to your device.</p>
+            </div>
+          </li>
+          <li>
+            <span class="rank-num">02</span>
+            <div>
+              <h3>Authenticator app</h3>
+              <p>Works offline and is easy to back up.</p>
+            </div>
+          </li>
+          <li>
+            <span class="rank-num">03</span>
+            <div>
+              <h3>Hardware key</h3>
+              <p>Excellent for high-value accounts.</p>
+            </div>
+          </li>
+          <li>
+            <span class="rank-num">04</span>
+            <div>
+              <h3>SMS code</h3>
+              <p>Better than nothing, but the weakest option.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <div class="rule">
+        <p class="kicker">Rule of thumb</p>
+        <p class="rule-quote">If a sign-in prompt appears when you did not try to sign in, deny it and change that password.</p>
+        <a class="rule-link" href="index.html">Back to home &rarr;</a>
+      </div>
+    </aside>
+
+    <!-- Footer: member identification and a way back home -->
+    <footer class="site-footer">
+      <p>Page by [Student Name 2] &middot; [Student ID 2]</p>
+      <p><a href="index.html">Blue Team Basics</a> &middot; Team [Team Number]</p>
+    </footer>
+  </div>
+</body>
+</html>

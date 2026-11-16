@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-labelledby="title desc">
+  <title id="title">Laptop with circular update arrows</title>
+  <desc id="desc">A laptop with a download arrow on screen and circular arrows around it, representing security updates.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dde6d2"/>
+      <stop offset="1" stop-color="#c9d8bd"/>
+    </linearGradient>
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#22382c" opacity="0.30"/>
+    </pattern>
+    <filter id="sh" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#dots)"/>
+  
+  <circle cx="640" cy="90" r="220" fill="#6f8560" opacity="0.18"/>
+  <g filter="url(#sh)">
+    <rect x="210" y="108" width="380" height="248" rx="16" fill="#22382c"/>
+    <rect x="234" y="132" width="332" height="200" rx="8" fill="#f8f5ea"/>
+    <path d="M400 168 V268" stroke="#b4552d" stroke-width="14" stroke-linecap="round"/>
+    <path d="M356 230 L400 274 L444 230" fill="none" stroke="#b4552d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M170 356 H630 L654 390 H146 Z" fill="#22382c"/>
+  </g>
+  <g filter="url(#sh)">
+    <circle cx="646" cy="116" r="58" fill="#b4552d"/>
+    <path d="M618 116 A28 28 0 0 1 660 92" fill="none" stroke="#f8f5ea" stroke-width="8" stroke-linecap="round"/>
+    <path d="M660 92 L662 112 M660 92 L640 100" fill="none" stroke="#f8f5ea" stroke-width="8" stroke-linecap="round"/>
+    <path d="M674 116 A28 28 0 0 1 632 140" fill="none" stroke="#f8f5ea" stroke-width="8" stroke-linecap="round"/>
+    <path d="M632 140 L630 120 M632 140 L652 132" fill="none" stroke="#f8f5ea" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(676 404)">
+    <path d="M0 0 L38 14 V40 C38 66 20 84 0 92 C-20 84 -38 66 -38 40 V14 Z" fill="#6f8560"/>
+    <path d="M-14 42 L-4 52 L16 28" fill="none" stroke="#f8f5ea" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+</svg>
