@@ -1,577 +1,125 @@
 /*
-  ISTE 140 - Web and Mobile I - Assignment 3
-  File: assets/css/index.css
-  Team: [Team Number]
-  Written by: [Student Name 1], [Student Name 2], [Student Name 3]
-  Colours: --void #0a0b0f (background), --panel #161922 (cards),
-           --ice #eef1f8 (text), --cobalt #5872ff (links and borders),
-           --volt #c6f24e (headline accent). Soft shades are tints of these.
-  Fonts: Arial Black for headings, Helvetica Neue for body text.
+  Team [Team Number] - ISTE 140, Assignment 3
+  Page: index.html (our home page)
+  Colours: blue #12395c, pale blue #eef4fa, white #ffffff,
+  red #c0392b, slate #5b6b7a. The shadow is blue with low opacity.
+  Font: Helvetica and Arial, nothing else.
 */
 
-/* Colour and font tokens used across the page. */
-:root {
-  --void: #0a0b0f;
-  --panel: #161922;
-  --ice: #eef1f8;
-  --cobalt: #5872ff;
-  --volt: #c6f24e;
-}
+/* remove the default space around everything */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Include borders and padding in every element's width. */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove the default page margin and set the dark background with a faint grid texture. */
+/* pale blue page with blue text */
 body {
-  margin: 0;
-  background-color: var(--void);
-  background-image:
-    linear-gradient(rgba(238, 241, 248, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(238, 241, 248, 0.045) 1px, transparent 1px);
-  background-size: 72px 72px;
-  color: var(--ice);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+  background: #eef4fa;
+  color: #12395c;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }
 
-/* Make images behave like blocks so no gap appears under them. */
-img {
-  display: block;
-  max-width: 100%;
-}
-
-/* Remove underlines from links; colour is handled per component. */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Reset list spacing so the grid controls every gap. */
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Remove default heading and paragraph margins. */
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-}
-
-/* Show a clear outline only for keyboard focus. */
-:focus-visible {
-  outline: 3px solid var(--volt);
-  outline-offset: 4px;
-}
-
-/* Centred page shell that holds header, hero, main and footer. */
+/* one column grid for header, nav, main and footer */
 .site {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  width: 100%;
-  max-width: 1280px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 56px);
+  padding: 16px;
 }
 
-/* Header row: brand on the left, navigation on the right. */
-.site-header {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 24px;
-  align-items: center;
-  padding: 26px 0;
-  border-bottom: 1px solid rgba(238, 241, 248, 0.12);
+/* CONTRAST: white title on the dark blue header */
+header {
+  grid-row: 1;
+  background: #12395c;
+  padding: 28px;
+  border-radius: 8px;
 }
 
-/* Brand link: monogram plus wordmark in a compact row. */
-.brand {
+/* the header title */
+header h1 { color: #ffffff; font-size: 32px; }
+
+/* the one sentence about our topic */
+header p { color: #eef4fa; margin-top: 6px; }
+
+/* nav sits under the header on its own row */
+nav {
+  grid-row: 2;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+/* ALIGNMENT: the nav links sit in one row, all on the same line */
+nav ul {
+  list-style: none;
   display: grid;
   grid-auto-flow: column;
-  gap: 12px;
-  align-items: center;
   justify-content: start;
-}
-
-/* Square monogram badge with a volt border. */
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--volt);
-  border-radius: 10px;
-  color: var(--volt);
-  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-}
-
-/* Wordmark next to the monogram. */
-.brand-name {
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-/* Navigation links sit in one row using a grid flow, never wrapping by accident. */
-.top-nav ul {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 6px;
-  justify-content: end;
-}
-
-/* Quiet pill links that brighten on hover. */
-.top-nav a {
-  display: block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  color: rgba(238, 241, 248, 0.72);
-  transition: background-color 160ms ease, color 160ms ease;
-}
-
-/* Hover state for navigation links. */
-.top-nav a:hover {
-  background-color: rgba(238, 241, 248, 0.08);
-  color: var(--ice);
-}
-
-/* Two-column hero: statement on the left, overview panel on the right. */
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
-  gap: clamp(32px, 6vw, 80px);
-  align-items: center;
-  padding: clamp(56px, 9vw, 104px) 0;
-}
-
-/* Small uppercase label that introduces each block. */
-.eyebrow {
-  margin-bottom: 18px;
-  color: var(--volt);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-/* CONTRAST: near-black page with ice text and a volt headline, so the eye lands on the title first. */
-/* Oversized hero headline with tight leading. */
-.hero h1 {
-  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(46px, 6.4vw, 86px);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-}
-
-/* Second headline line in the accent colour. */
-.hero h1 span {
-  color: var(--volt);
-}
-
-/* Readable intro paragraph capped at a comfortable line length. */
-.lead {
-  max-width: 56ch;
-  margin-top: 24px;
-  color: rgba(238, 241, 248, 0.7);
-  font-size: clamp(16px, 1.4vw, 18px);
-}
-
-/* Action links in one row under the intro. */
-.hero-actions {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 12px;
-  justify-content: start;
-  margin-top: 32px;
-}
-
-/* Shared button shape with a short lift on hover. */
-.button {
-  display: block;
-  padding: 14px 22px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
-}
-
-/* Solid volt button for the primary action. */
-.button-solid {
-  background-color: var(--volt);
-  color: var(--void);
-}
-
-/* Outline button for the secondary action. */
-.button-ghost {
-  border-color: rgba(238, 241, 248, 0.24);
-  color: var(--ice);
-}
-
-/* Hover feedback shared by both buttons. */
-.button:hover {
-  transform: translateY(-2px);
-}
-
-/* Ghost button hover fills with a subtle panel tint. */
-.button-ghost:hover {
-  background-color: rgba(238, 241, 248, 0.06);
-  border-color: rgba(238, 241, 248, 0.45);
-}
-
-/* Rounded overview panel with a soft cobalt glow. */
-.hero-board {
-  display: grid;
-  gap: 22px;
-  padding: 26px;
-  border: 1px solid rgba(88, 114, 255, 0.38);
-  border-radius: 20px;
-  background-image: linear-gradient(160deg, rgba(88, 114, 255, 0.2), rgba(22, 25, 34, 0.94));
-  box-shadow: 0 24px 60px rgba(10, 11, 15, 0.45);
-}
-
-/* Tiny label inside the board. */
-.board-kicker {
-  color: var(--volt);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-/* Checklist rows with a small gap between marker and text. */
-.board-list {
-  display: grid;
-  gap: 12px;
-}
-
-/* One checklist row: circular marker plus sentence. */
-.board-list li {
-  display: grid;
-  grid-template-columns: 20px minmax(0, 1fr);
-  gap: 10px;
-  align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(238, 241, 248, 0.1);
-  font-size: 14px;
-  color: rgba(238, 241, 248, 0.82);
-}
-
-/* Remove the divider from the final checklist row. */
-.board-list li:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-/* Small volt circle used as a tick marker. */
-.tick {
-  display: grid;
-  place-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--volt);
-}
-
-/* Draw a check mark inside the tick circle with two borders. */
-.tick::after {
-  content: "";
-  width: 5px;
-  height: 10px;
-  border-right: 2px solid var(--void);
-  border-bottom: 2px solid var(--void);
-  transform: rotate(45deg) translate(-1px, -1px);
-}
-
-/* Three stat blocks in an even row. */
-.board-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  padding-top: 6px;
-}
-
-/* One stat: number above label. */
-.stat-block {
-  display: grid;
-  gap: 2px;
-}
-
-/* Big accent number. */
-.stat {
-  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  font-size: 30px;
-  line-height: 1;
-  color: var(--volt);
-}
-
-/* Small caption under each number. */
-.stat-label {
-  color: rgba(238, 241, 248, 0.58);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* Guide section separated from the hero by a hairline. */
-.guides {
-  padding: 56px 0 64px;
-  border-top: 1px solid rgba(238, 241, 248, 0.12);
-}
-
-/* Section heading on the left and a short note on the right. */
-.section-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
-  gap: 24px;
-  align-items: end;
-  margin-bottom: 28px;
-}
-
-/* Section headings use the display face. */
-.section-head h2 {
-  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(28px, 3.2vw, 40px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-
-/* Supporting note beside the heading. */
-.section-head p {
-  color: rgba(238, 241, 248, 0.62);
-  font-size: 14px;
-}
-
-/* ALIGNMENT: every guide card starts on the same baseline because one grid row controls all three. */
-/* Responsive card grid: three cards share the row until the window gets narrow. */
-.guide-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
-/* REPETITION: all guide cards share the same surface, radius, border and hover behaviour. */
-/* Card surface that clips the image to the rounded corners. */
-.guide-card {
-  border: 1px solid rgba(238, 241, 248, 0.12);
-  border-radius: 18px;
-  background-color: var(--panel);
-  overflow: hidden;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+/* nav links are blue with a red underline */
+nav a {
+  color: #12395c;
+  text-decoration: none;
+  border-bottom: 2px solid #c0392b;
 }
 
-/* The whole card is one link, laid out as image above text. */
-.guide-card a {
+/* main holds the three page cards */
+main { grid-row: 3; }
+
+/* a little space above the cards */
+main h2 { margin-bottom: 12px; }
+
+/*
+  CARDS: auto-fit fills the row with as many 200px cards as fit, and
+  minmax(200px, 1fr) shares the rest of the space. If I change 200px to
+  300px the cards get wider, so fewer fit in a row and the third one
+  wraps onto its own line.
+*/
+.cards {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  height: 100%;
-}
-
-/* Fixed image ratio keeps the three thumbnails identical. */
-.guide-card img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  border-bottom: 1px solid rgba(238, 241, 248, 0.1);
-}
-
-/* PROXIMITY: title, description and link are grouped inside one padded block. */
-/* Text block inside each card. */
-.guide-body {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-  padding: 22px;
-}
-
-/* Meta row with the guide number on the left and media type on the right. */
-.guide-meta {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-  gap: 12px;
-  color: var(--volt);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-/* Media type label is quieter than the guide number. */
-.guide-media {
-  color: rgba(238, 241, 248, 0.4);
-}
-
-/* Card title in the display face. */
-.guide-body h3 {
-  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  font-size: 21px;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-}
-
-/* Card description in a muted tone. */
-.guide-body h3 + p {
-  color: rgba(238, 241, 248, 0.64);
-  font-size: 14px;
-}
-
-/* Text link at the bottom of the card. */
-.guide-link {
-  margin-top: 6px;
-  color: var(--volt);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-/* Hover lift with a cobalt edge and deeper shadow. */
-.guide-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(88, 114, 255, 0.65);
-  box-shadow: 0 22px 44px rgba(10, 11, 15, 0.5);
-}
-
-/* Project note panel above the footer. */
-.about {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  gap: 36px;
-  margin-bottom: 64px;
-  padding: 32px;
-  border: 1px solid rgba(238, 241, 248, 0.12);
-  border-radius: 20px;
-  background-color: var(--panel);
-}
-
-/* About heading. */
-.about h2 {
-  margin-bottom: 14px;
-  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(24px, 2.4vw, 30px);
-  line-height: 1.1;
-}
-
-/* About paragraph. */
-.about-copy {
-  color: rgba(238, 241, 248, 0.66);
-  font-size: 14px;
-}
-
-/* Team list: one row per member with a volt rule on the left. */
-.team-list {
-  display: grid;
-  gap: 14px;
-  align-content: center;
-}
-
-/* A member row with their name and topic. */
-.team-list li {
-  display: grid;
-  gap: 2px;
-  padding-left: 14px;
-  border-left: 2px solid var(--volt);
-  color: rgba(238, 241, 248, 0.6);
-  font-size: 13px;
-}
-
-/* Member name is brighter than their topic. */
-.team-list span {
-  color: var(--ice);
-  font-size: 15px;
-  font-weight: 700;
-}
-
-/* Footer row: course on the left, team on the right. */
-.site-footer {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
-  align-items: center;
-  padding: 26px 0 40px;
-  border-top: 1px solid rgba(238, 241, 248, 0.12);
-  color: rgba(238, 241, 248, 0.48);
-  font-size: 12px;
-  letter-spacing: 0.04em;
 }
 
-/* Stack the hero and section heading on medium screens. */
-@media (max-width: 960px) {
-  /* Single-column hero with a capped board width. */
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-    padding: 56px 0 64px;
-  }
-
-  /* Keep the overview panel from stretching too wide. */
-  .hero-board {
-    max-width: 520px;
-  }
-
-  /* Heading and note stack instead of sitting side by side. */
-  .section-head {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-  }
-
-  /* About text and team list stack. */
-  .about {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
+/* REPETITION: all three cards share the same box and shadow */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(18, 57, 92, 0.18);
+  overflow: hidden;
+  transition: transform 0.2s;
 }
 
-/* Compact layout for phones. */
-@media (max-width: 700px) {
-  /* Header stacks brand above the nav. */
-  .site-header {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-    padding: 20px 0;
-  }
+/* the thumbnail fills the top of the card */
+.card img { width: 100%; display: block; }
 
-  /* Navigation wraps into an even three-column row. */
-  .top-nav ul {
-    grid-auto-flow: row;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    justify-content: stretch;
-  }
+/* PROXIMITY: the card title sits right above its sentence */
+.card h3 { margin: 10px 12px 4px; font-size: 17px; }
 
-  /* Nav links centre themselves in their cells. */
-  .top-nav a {
-    text-align: center;
-  }
+/* card text and the link, padded from the edge */
+.card p { margin: 0 12px 6px; font-size: 14px; }
 
-  /* Action buttons stack full width for a bigger tap target. */
-  .hero-actions {
-    grid-auto-flow: row;
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  /* Stats keep three equal cells but use smaller numbers. */
-  .stat {
-    font-size: 24px;
-  }
-
-  /* Footer becomes one column. */
-  .site-footer {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 4px;
-  }
-
-  /* About panel uses tighter padding on small screens. */
-  .about {
-    padding: 24px;
-  }
+/* the open link at the bottom of each card */
+.card a {
+  display: block;
+  margin: 0 12px 12px;
+  color: #c0392b;
+  font-size: 14px;
 }
+
+/* the card grows a little when the mouse is over it */
+.card:hover { transform: scale(1.03); }
+
+/* footer closes the page */
+footer {
+  grid-row: 4;
+  text-align: center;
+  font-size: 13px;
+  color: #5b6b7a;
+  padding: 10px;
+}
+
+/* links in the footer use the slate colour */
+footer a { color: #5b6b7a; }

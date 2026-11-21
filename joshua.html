@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+  Joshua Twagirashema - [Student ID 2] - Team [Team Number]
+  ISTE 140, Assignment 3. Page: joshua.html
+  My layout: option 2, sidebar on the right.
+  Images: I drew all the SVG pictures in assets/img/ myself.
+  Video: I recorded the screen capture in assets/media/ myself.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passwords | Blue Team Basics</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/joshua.css">
+</head>
+<body>
+  <div class="site">
+
+    <header>
+      <h1>Passwords and MFA</h1>
+      <p>Four changes I made after a friend got locked out.</p>
+    </header>
+
+    <main>
+      <p class="intro">My password used to be my cat's name plus 123. I knew it was bad, I just never got around to changing it. Then a friend lost access to everything for two days and I fixed mine that night. These are the four changes I made, in the order I made them.</p>
+
+      <div class="video">
+        <video controls src="assets/media/mfa_demo.mp4" poster="assets/img/mfa_poster.svg">
+          <track src="assets/media/mfa_demo.vtt" kind="captions" srclang="en" label="English">
+          Your browser cannot play this video. <a href="assets/media/mfa_demo.mp4">Download it here</a>.
+        </video>
+      </div>
+
+      <h2 id="cards">Four things I changed</h2>
+
+      <div class="cards">
+        <article class="card">
+          <img src="assets/img/pass_length.svg" alt="A long bar made of small dots next to a short bar">
+          <h3>Long beats complicated</h3>
+          <p>A short sentence I can remember is safer than one messy word with an exclamation mark.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/img/pass_reuse.svg" alt="One key opening three different doors">
+          <h3>Never reuse one</h3>
+          <p>One leak should not open five accounts. Every site gets its own password now.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/img/pass_vault.svg" alt="A padlock with a combination dial">
+          <h3>Let the vault remember</h3>
+          <p>I know two passwords. The password manager knows the rest and fills them in for me.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/img/pass_mfa.svg" alt="A phone showing a six digit code next to a shield">
+          <h3>Turn on the second factor</h3>
+          <p>Even if someone steals my password, they still need the code on my phone.</p>
+        </article>
+      </div>
+    </main>
+
+    <nav>
+      <h2>On this page</h2>
+      <ul>
+        <li><a href="#cards">The four changes</a></li>
+        <li><a href="index.html">Back to home</a></li>
+      </ul>
+    </nav>
+
+    <aside>
+      <h2>Do it tonight</h2>
+      <ol>
+        <li>Install a password manager.</li>
+        <li>Change your email password first.</li>
+        <li>Turn on MFA on that account too.</li>
+      </ol>
+    </aside>
+
+    <footer>
+      <p>Joshua Twagirashema - [Student ID 2] - Team [Team Number]</p>
+      <p><a href="index.html">Blue Team Basics</a> - ISTE 140, Fall 2026</p>
+    </footer>
+
+  </div>
+</body>
+</html>

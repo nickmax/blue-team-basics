@@ -36,9 +36,9 @@ If you use VS Code, the **Live Server** extension does the same thing.
 | File | Owner | Topic | Layout option | Required media |
 | --- | --- | --- | --- | --- |
 | `index.html` + `assets/css/index.css` | Whole team (one person commits) | Team home page, links to all three guides | Hero grid + 3-card guide grid | — |
-| `member1.html` + `assets/css/member1.css` | Member 1 | Phishing and social engineering | **Option 1**: nav left, main right | **Audio** |
-| `member2.html` + `assets/css/member2.css` | Member 2 | Passwords and MFA | **Option 2**: main left, sidebar right | **Video** |
-| `member3.html` + `assets/css/member3.css` | Member 3 | Endpoint protection and malware | **Option 3**: nav, main, sidebar | — |
+| `nick.html` + `assets/css/nick.css` | Nick Mathenge | Phishing and social engineering | **Option 1**: nav left, main right | **Audio** |
+| `joshua.html` + `assets/css/joshua.css` | Joshua Twagirashema | Passwords and MFA | **Option 2**: main left, sidebar right | **Video** |
+| `ibrahim.html` + `assets/css/ibrahim.css` | Ibrahim Fadil | Endpoint protection and malware | **Option 3**: nav, main, sidebar | — |
 
 **Rule of thumb:** edit only your own HTML file and your own stylesheet. If you need a change to `index.html` (your name in the team list, for example), make it and say so in the commit message so nobody's work is overwritten.
 
@@ -53,13 +53,13 @@ Work on a branch, then open a pull request. This keeps `main` clean and makes it
 git pull origin main
 
 # Create a branch named after your page
-git switch -c member1/phishing-copy
+git switch -c nick/phishing-copy
 
 # Edit your files...
-git add member1.html assets/css/member1.css assets/media/phishing_voicemail.m4a
-git commit -m "member1: rewrite intro and replace voicemail"
+git add nick.html assets/css/nick.css assets/media/phishing_voicemail.m4a
+git commit -m "nick: rewrite intro and replace voicemail"
 
-git push -u origin member1/phishing-copy
+git push -u origin nick/phishing-copy
 ```
 
 Then open the repo on GitHub and click **Compare & pull request**. Ask one teammate to review, then merge.
@@ -68,7 +68,7 @@ Then open the repo on GitHub and click **Compare & pull request**. Ask one teamm
 
 ```sh
 git add .
-git commit -m "fix: member3 footer link"
+git commit -m "fix: ibrahim footer link"
 git pull --rebase origin main
 git push origin main
 ```
@@ -79,9 +79,9 @@ Before you push, always run `git pull --rebase origin main`. If two people edit 
 
 Use a short prefix so the history is readable:
 
-- `member1:` — changes to the phishing page
-- `member2:` — changes to the passwords page
-- `member3:` — changes to the endpoints page
+- `nick:` — changes to the phishing page
+- `joshua:` — changes to the passwords page
+- `ibrahim:` — changes to the endpoints page
 - `index:` — home page
 - `fix:` — corrections that are not content
 - `docs:` — README only
@@ -111,7 +111,7 @@ Do not remove these; they are graded.
 - **HTML and CSS top comments** with page name, student name, student ID, team number and topic.
 - **A one-line comment above every CSS rule.**
 - **CRAP comments** — at least one each for Contrast, Repetition, Alignment and Proximity.
-- **Soft shadows, rounded corners, hover effects and badges** on the cards.
+- **Two finishing touches** on the cards: rounded corners with a soft shadow, and a card that grows a little on hover.
 - **Lowercase file names, underscores for multi-word assets** (`mfa_demo.mp4`, not `MFA Demo.mp4`).
 - **No flexbox, no floats.** If you need alignment inside a card, use a nested grid.
 
@@ -129,31 +129,31 @@ It should print nothing.
 
 ### All members
 
-1. Replace every placeholder:
+1. Replace every remaining placeholder:
    - `[Team Number]` — all four HTML files, all four CSS files, and `index.html`.
-   - `[Student Name 1]` / `[Student ID 1]` — `member1.html`, `assets/css/member1.css`, and your line in the `index.html` team list.
-   - The same for members 2 and 3.
-2. Rewrite the CSS comments in your own words. They are plain on purpose and the assignment requires you to be able to explain your own code.
-3. Rewrite the intro paragraph and at least one card in your own voice. The current copy is a scaffold.
+   - `[Student ID 1]` — `nick.html` and `assets/css/nick.css` (Nick Mathenge).
+   - `[Student ID 2]` — `joshua.html` and `assets/css/joshua.css` (Joshua Twagirashema).
+   - `[Student ID 3]` — `ibrahim.html` and `assets/css/ibrahim.css` (Ibrahim Fadil).
+   - Names are already filled in on `index.html`, the member pages and `index.css`.
+2. Read the CSS comments and check you can explain each rule. If a comment does not sound like you, rewrite it in your own words.
+3. Rewrite one card in your own voice. The current copy is a starting point.
 
 ### Member 1 — audio
 
 - Replace `assets/media/phishing_voicemail.m4a` with your own voicemail-style recording (QuickTime, Audacity, or Voice Memos → export M4A).
-- Keep the file name, or update `<audio src>` in `member1.html`.
-- Update the "31 seconds" label in the card kicker to match your clip.
-- Update or remove the `AUDIO CREDIT` comment so it credits the real speaker.
+- Keep the file name, or update `<audio src>` in `nick.html`.
+- Add a line under the player if you want to credit the speaker.
 
 ### Member 2 — video
 
 - Replace `assets/media/mfa_demo.mp4` with your own screen recording or narrated slides.
-- Keep the file name, or update `<source src>` in `member2.html`.
-- Re-time `assets/media/mfa_demo.vtt` — the three cues must match what is said.
+- Keep the file name, or update the `<video src>` in `joshua.html`.
+- Re-time `assets/media/mfa_demo.vtt` so the three cues match what is said.
 - If the first slide changes, update `assets/img/mfa_poster.svg` so the poster still matches the video.
-- Update the duration labels on the page.
 
 ### Member 3 — endpoints
 
-- Your page has the densest grid. If you add content to `.side-panel`, it can grow taller than the viewport and the sticky behaviour stops feeling right. Re-check at 1024 px after edits.
+- Three columns get tight on a small screen. Open the page at 1024 px after edits and check the sidebar is still readable.
 
 > **The included audio and video are placeholders** generated for layout testing. They must be replaced with the team's own recordings before submission.
 
@@ -161,14 +161,12 @@ It should print nothing.
 
 ## 6. Validation
 
-Checked on 16 November 2026:
+**Checked 21 Nov 2026** — all four pages pass the W3C HTML validator with no errors. The CSS passes `csstree-validator` with no errors; re-run the W3C CSS validator once before you submit, because the hosted checker was rate limiting during this pass.
 
-- **W3C Nu HTML Checker** — `index.html`, `member1.html`, `member2.html`, `member3.html`: no errors.
-- **W3C CSS Validator (CSS level 3)** — all four stylesheets: no errors, no warnings.
-- **No non-grid layout declarations** in any HTML or CSS file.
-- **All local paths resolve** — images, audio, video and captions.
-- **Tested at 1440 px, 1024 px and 390 px** — no horizontal overflow, no console errors. `.cards` computes 4 / 2 / 1 columns.
-- **Media** — audio 30.8 s, video 36.7 s, captions load with 3 cues.
+- **No non-grid layout declarations** in any HTML or CSS file — confirmed by `grep -rniE "flex|float"`.
+- **All local paths resolve** — images, audio, video, captions and stylesheets.
+- **Cards at 1440 px** — 3 per row on the two narrow layouts, 2 per row on the three-column layout, all from the `auto-fit` rule alone.
+- **Media** — placeholder audio/video still in place; replace them before submission.
 
 Re-run after personalising:
 
@@ -208,16 +206,16 @@ Use this to review each other's work, not as the submitted URL.
 ```
 blue-team-basics/
 ├── index.html
-├── member1.html                    # phishing + audio
-├── member2.html                    # passwords/MFA + video
-├── member3.html                    # endpoints
+├── nick.html                      # phishing + audio
+├── joshua.html                    # passwords/MFA + video
+├── ibrahim.html                   # endpoints
 ├── README.md
 └── assets/
     ├── css/
     │   ├── index.css
-    │   ├── member1.css
-    │   ├── member2.css
-    │   └── member3.css
+    │   ├── nick.css
+    │   ├── joshua.css
+    │   └── ibrahim.css
     ├── img/                        # 19 original SVG illustrations
     │   ├── favicon.svg
     │   ├── thumb_phishing.svg  thumb_passwords.svg  thumb_endpoints.svg

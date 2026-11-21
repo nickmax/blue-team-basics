@@ -1,0 +1,155 @@
+/*
+  Joshua Twagirashema - [Student ID 2] - Team [Team Number]
+  ISTE 140, Assignment 3. Page: joshua.html
+  My colours: deep green #14342b, mint #eaf3ee, white #ffffff,
+  pink #c96b86, sage #4b6b60. The shadow is deep green with low opacity.
+  My font: Verdana, one font for the whole page.
+*/
+
+/* remove the default space around everything */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* mint page, deep green text, Verdana everywhere */
+body {
+  background: #eaf3ee;
+  color: #14342b;
+  font-family: Verdana, sans-serif;
+  line-height: 1.7;
+}
+
+/* headings are the same font but bigger and pink on the header */
+h1, h2, h3 { line-height: 1.3; }
+
+/* CONTRAST: white heading on a deep green band */
+header h1 { color: #ffffff; font-size: 32px; }
+
+/* the grid: header, main, nav, sidebar and footer */
+.site {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* header goes across the top */
+header {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  background: #14342b;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+/* the sentence under the header title */
+header p { color: #eaf3ee; margin-top: 6px; }
+
+/* main is the wide left column and runs past the sidebar */
+main {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  padding-right: 6px;
+}
+
+/* nav is the first box in the right column */
+nav {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+/* ALIGNMENT: the nav links are all indented by the same amount */
+nav ul {
+  list-style: none;
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+/* nav links are plain text with a pink line under them */
+nav a {
+  display: block;
+  padding: 4px 0;
+  color: #4b6b60;
+  text-decoration: none;
+  border-bottom: 2px solid #c96b86;
+}
+
+/* the sidebar is the second box in the right column */
+aside {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: start;
+  background: #14342b;
+  color: #eaf3ee;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+/* the small title inside the sidebar */
+aside h2 { color: #c96b86; font-size: 17px; margin-bottom: 6px; }
+
+/* the sidebar list keeps its numbers and a little space */
+aside ol { margin-left: 18px; display: grid; gap: 4px; font-size: 13px; }
+
+/* a bit of space under my intro paragraph */
+.intro { margin-bottom: 18px; }
+
+/* space above the video so it does not touch the intro */
+.video { margin-bottom: 18px; }
+
+/* the video is as wide as main allows */
+.video video { width: 100%; border-radius: 8px; display: block; }
+
+/* space above the card heading */
+main h2 { margin-bottom: 10px; }
+
+/*
+  CARDS: auto-fit puts as many cards in a row as there is room for, and
+  minmax(200px, 1fr) says a card is never under 200px. If I change 200px
+  to 300px each card gets wider, so only one or two fit on a line and
+  the rest wrap down.
+*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* REPETITION and finishing touch: same white box, corners and shadow */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(20, 52, 43, 0.15);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+/* the picture fills the card from edge to edge */
+.card img { width: 100%; display: block; }
+
+/* PROXIMITY: the card heading sits close to its own text */
+.card h3 { margin: 10px 12px 4px; font-size: 16px; color: #14342b; }
+
+/* card text, padded so it does not touch the edge */
+.card p { margin: 0 12px 12px; font-size: 13px; }
+
+/* finishing touch 2: the card lifts up a little on hover */
+.card:hover { transform: translateY(-4px); }
+
+/* footer goes under everything */
+footer {
+  grid-column: 1 / 3;
+  grid-row: 4;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+}
+
+/* links are sage green and underlined so they are easy to spot */
+a { color: #4b6b60; }

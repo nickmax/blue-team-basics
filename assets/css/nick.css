@@ -1,0 +1,136 @@
+/*
+  Nick Mathenge - [Student ID 1] - Team [Team Number]
+  ISTE 140, Assignment 3. Page: nick.html
+  My colours: navy #1b2a41, cream #fdf8ef, white #ffffff,
+  orange #d9773f, teal #2f6f6a. The shadow is navy with low opacity.
+  My fonts: Georgia for headings, Arial for the text.
+*/
+
+/* remove the space browsers add around everything */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* cream page, navy text, Arial and a little extra line height */
+body {
+  background: #fdf8ef;
+  color: #1b2a41;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* headings use my second font so they look different from the text */
+h1, h2, h3 { font-family: Georgia, serif; }
+
+/* CONTRAST: cream heading on the dark navy header, easy to read */
+header h1 { color: #fdf8ef; font-size: 34px; }
+
+/* the grid that holds my header, nav, main and footer */
+.site {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+/* header goes across both columns on row 1 */
+header {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  background: #1b2a41;
+  padding: 26px;
+  border-radius: 10px;
+}
+
+/* the small sentence under the header title */
+header p { color: #fdf8ef; margin-top: 6px; }
+
+/* nav takes the left column of row 2 */
+nav {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+/* ALIGNMENT: every nav link starts on the same left edge */
+nav ul {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+/* each nav link looks like a small button */
+nav a {
+  display: block;
+  padding: 8px 10px;
+  color: #2f6f6a;
+  text-decoration: none;
+  border-left: 4px solid #d9773f;
+}
+
+/* main content takes the right column of row 2 */
+main { grid-column: 2; grid-row: 2; }
+
+/* a little space under the intro text */
+.intro { margin-bottom: 20px; }
+
+/* PROXIMITY: the heading sits close to the cards it belongs to */
+main h2 { margin: 18px 0 8px; }
+
+/*
+  CARDS: auto-fit fills each row with as many 200px cards as fit, and
+  minmax(200px, 1fr) lets them share the extra space. If I change
+  200px to 300px the cards get wider, so fewer fit in a row and they
+  drop to the next line sooner.
+*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* REPETITION: every card has the same white box, corners and shadow */
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(27, 42, 65, 0.18);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+/* the image fills the card and keeps the rounded top corners */
+.card img { width: 100%; display: block; }
+
+/* card heading, indented from the edges */
+.card h3 { margin: 12px 14px 4px; font-size: 18px; }
+
+/* card text, same indents so the cards line up */
+.card p { margin: 0 14px 14px; font-size: 14px; }
+
+/* finishing touch 1: the card grows a little on hover */
+.card:hover { transform: scale(1.03); }
+
+/* the numbered list keeps a little space between the steps */
+ol { margin-left: 20px; display: grid; gap: 6px; }
+
+/* the audio player gets its own space above it */
+.audio { margin-top: 22px; }
+
+/* the player fills the width of main */
+.audio audio { width: 100%; margin-top: 8px; }
+
+/* footer sits under both columns on the last row */
+footer {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px;
+}
+
+/* links in the text use my teal colour */
+a { color: #2f6f6a; }

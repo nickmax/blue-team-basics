@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+  Nick Mathenge - [Student ID 1] - Team [Team Number]
+  ISTE 140, Assignment 3. Page: nick.html
+  My layout: option 1, navigation on the left.
+  Images: I drew all the SVG pictures in assets/img/ myself.
+  Audio: I recorded the fake voicemail in assets/media/ myself.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phishing | Blue Team Basics</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/nick.css">
+</head>
+<body>
+  <div class="site">
+
+    <header>
+      <h1>Phishing</h1>
+      <p>Fake messages, and how I stopped falling for them.</p>
+    </header>
+
+    <nav>
+      <h2>On this page</h2>
+      <ul>
+        <li><a href="#flags">Four red flags</a></li>
+        <li><a href="#check">What I do now</a></li>
+        <li><a href="#listen">Listen to one</a></li>
+        <li><a href="index.html">Back to home</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <p class="intro">I get two or three phishing emails a week. Most are easy to spot, but one almost got me last semester because it looked like a real RIT notice. So I wrote down what gave it away. This is the short version of what I check now before I click anything.</p>
+
+      <h2 id="flags">Four red flags</h2>
+
+      <div class="cards">
+        <article class="card">
+          <img src="assets/img/flag_urgency.svg" alt="An envelope with a clock in the corner">
+          <h3>It is always urgent</h3>
+          <p>Payroll closes in ten minutes. Your account gets suspended tonight. Real offices give you days, so the rush is the trick.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/img/flag_authority.svg" alt="A clip-on ID badge next to a warning sign">
+          <h3>A logo proves nothing</h3>
+          <p>Anyone can copy a logo and a job title. If the message asks for a password or a code, it is not really IT.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/img/flag_link.svg" alt="A browser address bar above three chain links">
+          <h3>Links that almost match</h3>
+          <p>rit.edu and rit-edu.support are two different places. Read the address right before the first slash.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/img/flag_attachment.svg" alt="A paperclip and a warning triangle">
+          <h3>Files you did not ask for</h3>
+          <p>An invoice you never ordered, or a CV from a stranger. Check with the sender on a number you already have.</p>
+        </article>
+      </div>
+
+      <h2 id="check">What I do now</h2>
+      <ol>
+        <li>Stop. I do not reply, click or call the number in the message.</li>
+        <li>I look the office up myself and call that number instead.</li>
+        <li>I report the message, then delete it.</li>
+      </ol>
+
+      <div class="audio" id="listen">
+        <h2>Listen to one</h2>
+        <p>This is a fake voicemail I recorded for class. It uses the same pressure tricks as the emails.</p>
+        <audio controls src="assets/media/phishing_voicemail.m4a">
+          Your browser cannot play this file. <a href="assets/media/phishing_voicemail.m4a">Download it here</a>.
+        </audio>
+      </div>
+    </main>
+
+    <footer>
+      <p>Nick Mathenge - [Student ID 1] - Team [Team Number]</p>
+      <p><a href="index.html">Blue Team Basics</a> - ISTE 140, Fall 2026</p>
+    </footer>
+
+  </div>
+</body>
+</html>

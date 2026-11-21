@@ -1,0 +1,155 @@
+/*
+  Ibrahim Fadil - [Student ID 3] - Team [Team Number]
+  ISTE 140, Assignment 3. Page: ibrahim.html
+  My colours: purple #3b2a5a, light grey #f4f4f6, white #ffffff,
+  yellow #f2c14e, dark grey #2f2f2f. The shadow is purple with low opacity.
+  My fonts: Trebuchet MS for headings, Courier New for the sidebar list.
+*/
+
+/* remove the space browsers add by default */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* light grey page with dark grey text */
+body {
+  background: #f4f4f6;
+  color: #2f2f2f;
+  font-family: "Trebuchet MS", sans-serif;
+  line-height: 1.6;
+}
+
+/* headings use the same font in bold, with a little more space */
+h1, h2, h3 { line-height: 1.3; }
+
+/* CONTRAST: yellow heading on the dark purple header */
+header h1 { color: #f2c14e; font-size: 30px; }
+
+/* the grid with three columns for nav, main and sidebar */
+.site {
+  display: grid;
+  grid-template-columns: 150px 1fr 190px;
+  gap: 14px;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 14px;
+}
+
+/* header goes across all three columns */
+header {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  background: #3b2a5a;
+  padding: 22px;
+  border-radius: 6px;
+}
+
+/* the line under the header title */
+header p { color: #f4f4f6; margin-top: 4px; }
+
+/* nav is the narrow left column */
+nav {
+  grid-column: 1;
+  grid-row: 2;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+  align-self: start;
+}
+
+/* a smaller nav title so it fits in the narrow column */
+nav h2 { font-size: 16px; }
+
+/* nav links are stacked with a small gap */
+nav ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ALIGNMENT: all nav links start at the same left edge */
+nav a {
+  display: block;
+  color: #3b2a5a;
+  text-decoration: none;
+  font-size: 14px;
+  border-left: 3px solid #f2c14e;
+  padding-left: 8px;
+}
+
+/* main is the middle column */
+main { grid-column: 2; grid-row: 2; }
+
+/* space under the intro */
+.intro { margin-bottom: 16px; }
+
+/* space above the cards heading */
+main h2 { margin-bottom: 10px; }
+
+/*
+  CARDS: auto-fit puts as many cards in a row as there is room for, and
+  minmax(200px, 1fr) keeps every card at least 200px wide. If I change
+  200px to 300px the cards get wider, so fewer of them fit in a row and
+  the last one moves down to a new line.
+*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+/* REPETITION and finishing touch: same white box, corners and shadow */
+.card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(59, 42, 90, 0.2);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+/* the picture fills the top of the card */
+.card img { width: 100%; display: block; }
+
+/* PROXIMITY: heading and text of one card stay close together */
+.card h3 { margin: 10px 12px 4px; font-size: 15px; color: #3b2a5a; }
+
+/* card text sits under its heading with the same side padding */
+.card p { margin: 0 12px 12px; font-size: 13px; }
+
+/* finishing touch 2: the card grows a little when the mouse is over it */
+.card:hover { transform: scale(1.04); }
+
+/* the sidebar is the narrow right column */
+aside {
+  grid-column: 3;
+  grid-row: 2;
+  background: #3b2a5a;
+  color: #f4f4f6;
+  padding: 12px;
+  border-radius: 6px;
+  align-self: start;
+}
+
+/* the sidebar title */
+aside h2 { color: #f2c14e; font-size: 15px; margin-bottom: 8px; }
+
+/* the checklist uses Courier New and keeps its bullets */
+aside ul {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  list-style: square;
+  margin-left: 16px;
+  display: grid;
+  gap: 6px;
+}
+
+/* footer goes across all three columns */
+footer {
+  grid-column: 1 / 4;
+  grid-row: 3;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+}
+
+/* links are purple so they stand out from the text */
+a { color: #3b2a5a; }
